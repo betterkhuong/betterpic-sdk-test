@@ -40,6 +40,7 @@
 
     <!-- Load SDK from your local Nuxt app -->
     <script src="https://betterpic.io/sdk/photoshoot.js"></script>
+    <!-- <script src="http://localhost:3502/sdk/photoshoot.js"></script> -->
     <script>
       // Initialize the SDK
       const sdk = BetterPicSDK.init({
@@ -47,6 +48,7 @@
         apiKey: "test-key-123",
         height: "800px",
         theme: "light",
+        mode: "staging",
         onEvent: function (event) {
           console.log("Event from BetterPic:", event);
 
