@@ -27,16 +27,7 @@
     </style>
   </head>
   <body>
-    <div class="header">
-      <h1>My Website</h1>
-      <p>This is my website content. BetterPic is embedded below:</p>
-    </div>
-
     <div id="betterpic-container"></div>
-
-    <div class="header" style="margin-top: 20px">
-      <p>More content after the embedded app...</p>
-    </div>
 
     <!-- Load SDK from your local Nuxt app -->
     <script src="https://betterpic.io/sdk/photoshoot.js"></script>
@@ -45,26 +36,8 @@
       // Initialize the SDK
       const sdk = BetterPicSDK.init({
         containerId: "betterpic-container",
-        apiKey: "test-key-123",
         height: "800px",
-        theme: "light",
-        mode: "staging",
-        onEvent: function (event) {
-          console.log("Event from BetterPic:", event);
-
-          // Handle different events
-          switch (event.type) {
-            case "purchase":
-              alert("Purchase completed!\nOrder ID: " + event.data.orderId);
-              break;
-            case "resize":
-              console.log("Height changed to:", event.data.height);
-              break;
-            case "error":
-              console.error("Error:", event.data.message);
-              break;
-          }
-        },
+        affiliateId: "my_dub_id",
       });
     </script>
   </body>
